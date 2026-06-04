@@ -1,0 +1,199 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and settings",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["OWNER", "PROJECT_MANAGER", "EMPLOYEE", "FINANCE", "HR"] },
+        "department": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "lastLogin": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "A project managed within the EPPM",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "client": { "type": "string" },
+        "budget": { "type": "number" },
+        "spent": { "type": "number" },
+        "startDate": { "type": "string", "format": "date" },
+        "endDate": { "type": "string", "format": "date" },
+        "progress": { "type": "number" },
+        "priority": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+        "status": { "type": "string", "enum": ["PLANNING", "ACTIVE", "ON_HOLD", "COMPLETED", "CANCELLED"] },
+        "ownerId": { "type": "string" },
+        "projectManagerId": { "type": "string" },
+        "teamMembers": { "type": "array", "items": { "type": "string" } },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "client", "budget", "startDate", "endDate", "projectManagerId"]
+    },
+    "Lot": {
+      "title": "Lot",
+      "description": "A package/work lot within a project",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string", "enum": ["PLANNING", "ACTIVE", "COMPLETED", "ON_HOLD"] },
+        "progress": { "type": "number" },
+        "budget": { "type": "number" },
+        "startDate": { "type": "string", "format": "date" },
+        "endDate": { "type": "string", "format": "date" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["projectId", "name", "status"]
+    },
+    "ProjectDocument": {
+      "title": "ProjectDocument",
+      "description": "A document associated with a project",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "size": { "type": "string" },
+        "author": { "type": "string" },
+        "ref": { "type": "string" },
+        "url": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["projectId", "name", "type", "author"]
+    },
+    "ProjectMessage": {
+      "title": "ProjectMessage",
+      "description": "A message in a project discussion",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userRole": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["projectId", "userId", "content"]
+    },
+    "Task": {
+      "title": "Task",
+      "description": "A specific task within a project",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "assigneeId": { "type": "string" },
+        "startDate": { "type": "string", "format": "date" },
+        "endDate": { "type": "string", "format": "date" },
+        "status": { "type": "string", "enum": ["BACKLOG", "TODO", "IN_PROGRESS", "REVIEW", "DONE"] },
+        "priority": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+        "progress": { "type": "number" },
+        "estimatedHours": { "type": "number" },
+        "actualHours": { "type": "number" },
+        "dependencies": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["projectId", "name", "assigneeId", "status"]
+    },
+    "Resource": {
+      "title": "Resource",
+      "description": "Human or material resource allocation",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "skills": { "type": "array", "items": { "type": "string" } },
+        "availability": { "type": "number" },
+        "costPerHour": { "type": "number" }
+      }
+    },
+    "BudgetEntry": {
+      "title": "BudgetEntry",
+      "description": "Financial transaction or budget allocation",
+      "type": "object",
+      "properties": {
+        "projectId": { "type": "string" },
+        "amount": { "type": "number" },
+        "type": { "type": "string", "enum": ["INCOME", "EXPENSE"] },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "authorizedBy": { "type": "string" }
+      }
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "User notification",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "type": { "type": "string" },
+        "read": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "link": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "projects": {
+      "schema": "Project",
+      "description": "List of all projects"
+    },
+    "lots": {
+      "schema": "Lot",
+      "description": "All work lots across projects"
+    },
+    "documents": {
+      "schema": "ProjectDocument",
+      "description": "All project documents"
+    },
+    "messages": {
+      "schema": "ProjectMessage",
+      "description": "All project discussion messages"
+    },
+    "tasks": {
+      "schema": "Task",
+      "description": "All tasks across all projects"
+    },
+    "projects/{projectId}/budget": {
+      "schema": "BudgetEntry",
+      "description": "Budget and financial entries for a project"
+    },
+    "notifications": {
+      "schema": "Notification",
+      "description": "Global notifications"
+    },
+    "resources": {
+      "schema": "Resource",
+      "description": "Detailed resource info linked to users"
+    }
+  }
+}

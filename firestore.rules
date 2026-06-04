@@ -1,0 +1,102 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    match /users/{userId} {
+      allow read, delete: if isSignedIn() && isValidId(userId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(userId);
+    }
+
+    match /projects/{projectId} {
+      allow read, delete: if isSignedIn() && isValidId(projectId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(projectId);
+    }
+
+    match /clients/{clientId} {
+      allow read, delete: if isSignedIn() && isValidId(clientId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(clientId);
+    }
+
+    match /tasks/{taskId} {
+      allow read, delete: if isSignedIn() && isValidId(taskId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(taskId);
+    }
+
+    match /lots/{lotId} {
+      allow read, delete: if isSignedIn() && isValidId(lotId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(lotId);
+    }
+
+    match /activityLogs/{logId} {
+      allow read, delete: if isSignedIn() && isValidId(logId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(logId);
+    }
+    
+    match /acomptes/{acompteId} {
+      allow read, delete: if isSignedIn() && isValidId(acompteId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(acompteId);
+    }
+
+    match /projectFeedbacks/{feedbackId} {
+      allow read, delete: if isSignedIn() && isValidId(feedbackId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(feedbackId);
+    }
+
+    match /projectDocuments/{docId} {
+      allow read, delete: if isSignedIn() && isValidId(docId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(docId);
+    }
+
+    match /projectMessages/{messageId} {
+      allow read, delete: if isSignedIn() && isValidId(messageId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(messageId);
+    }
+
+    match /projects_budget/{budgetId} {
+      allow read, delete: if isSignedIn() && isValidId(budgetId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(budgetId);
+    }
+
+    match /notifications/{notificationId} {
+      allow read, delete: if isSignedIn() && isValidId(notificationId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(notificationId);
+    }
+    
+    match /templates/{templateId} {
+      allow read, delete: if isSignedIn() && isValidId(templateId);
+      allow list: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(templateId);
+    }
+  }
+}

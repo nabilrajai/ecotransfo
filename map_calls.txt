@@ -1,0 +1,402 @@
+src/pages/project-details/ProjectResources.tsx:          {filteredResources.map((res, idx) => (
+src/pages/project-details/ProjectResources.tsx-            <motion.div 
+src/pages/project-details/ProjectResources.tsx-              layout
+src/pages/project-details/ProjectResources.tsx-              initial={{ opacity: 0, y: 20 }}
+--
+src/pages/project-details/ProjectResources.tsx:             {Array.from({ length: 48 }).map((_, i) => {
+src/pages/project-details/ProjectResources.tsx-               const height = 15 + Math.random() * 85;
+src/pages/project-details/ProjectResources.tsx-               return (
+src/pages/project-details/ProjectResources.tsx-                 <div 
+--
+src/pages/project-details/ProjectTasks.tsx:                   {filteredLots.map(lot => {
+src/pages/project-details/ProjectTasks.tsx-                     const isExpanded = expandedLot === lot.id;
+src/pages/project-details/ProjectTasks.tsx-                     const lotTasks = tasks.filter(t => t.lotId === lot.id);
+src/pages/project-details/ProjectTasks.tsx-                     return (
+--
+src/pages/project-details/ProjectTasks.tsx:                                 {lot.assignedUsers && lot.assignedUsers.length > 0 ? lot.assignedUsers.map((u, idx) => (
+src/pages/project-details/ProjectTasks.tsx-                                   <span key={idx} className="text-[9px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full uppercase tracking-widest font-display">
+src/pages/project-details/ProjectTasks.tsx-                                     {u}
+src/pages/project-details/ProjectTasks.tsx-                                   </span>
+--
+src/pages/project-details/ProjectTasks.tsx:                                     {lotTasks.map(task => (
+src/pages/project-details/ProjectTasks.tsx-                                       <div key={task.id} className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
+src/pages/project-details/ProjectTasks.tsx-                                         <div className="flex items-center gap-4">
+src/pages/project-details/ProjectTasks.tsx-                                            <div className="flex items-center gap-3">
+--
+src/pages/project-details/ProjectTasks.tsx:           {columns.map(col => {
+src/pages/project-details/ProjectTasks.tsx-             const colLots = filteredLots.filter(l => l.status === col.id);
+src/pages/project-details/ProjectTasks.tsx-             return (
+src/pages/project-details/ProjectTasks.tsx-                <div 
+--
+src/pages/project-details/ProjectTasks.tsx:                     {colLots.map(lot => (
+src/pages/project-details/ProjectTasks.tsx-                       <div 
+src/pages/project-details/ProjectTasks.tsx-                        key={lot.id} 
+src/pages/project-details/ProjectTasks.tsx-                        draggable
+--
+src/pages/project-details/ProjectTasks.tsx:                               {lot.assignedUsers.map((user: string, idx: number) => (
+src/pages/project-details/ProjectTasks.tsx-                                 <span key={idx} className="text-[9px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full uppercase tracking-widest font-display">
+src/pages/project-details/ProjectTasks.tsx-                                   {user}
+src/pages/project-details/ProjectTasks.tsx-                                 </span>
+--
+src/pages/project-details/ProjectBudget.tsx:                   {data.map((entry, index) => (
+src/pages/project-details/ProjectBudget.tsx-                     <Cell 
+src/pages/project-details/ProjectBudget.tsx-                        key={`cell-${index}`} 
+src/pages/project-details/ProjectBudget.tsx-                        fill={index === data.length - 1 ? '#0f172a' : '#2563eb'} 
+--
+src/pages/project-details/ProjectBudget.tsx:                 {filteredTransactions.map(txn => (
+src/pages/project-details/ProjectBudget.tsx-                   <TransactionRow 
+src/pages/project-details/ProjectBudget.tsx-                    key={txn.id} 
+src/pages/project-details/ProjectBudget.tsx-                    {...txn} 
+--
+src/pages/project-details/ProjectOverview.tsx:            {itemsToDisplay.slice(0, 6).map(item => (
+src/pages/project-details/ProjectOverview.tsx-              <div key={item.id} className="flex items-center justify-between p-6 hover:bg-slate-50 transition-all cursor-pointer group">
+src/pages/project-details/ProjectOverview.tsx-                <div className="flex items-center gap-6">
+src/pages/project-details/ProjectOverview.tsx-                  <div className={cn(
+--
+src/pages/project-details/ProjectDocuments.tsx:                {filteredDocs.map((docItem) => (
+src/pages/project-details/ProjectDocuments.tsx-                  <motion.tr 
+src/pages/project-details/ProjectDocuments.tsx-                    key={docItem.id} 
+src/pages/project-details/ProjectDocuments.tsx-                    initial={{ opacity: 0 }}
+--
+src/pages/project-details/ProjectDiscussions.tsx:                {['NR', 'SM', 'DA', 'YB'].map((init, idx) => (
+src/pages/project-details/ProjectDiscussions.tsx-                  <div key={init} className={cn(
+src/pages/project-details/ProjectDiscussions.tsx-                     "w-9 h-9 rounded-xl flex items-center justify-center text-[10px] font-black text-white uppercase ring-4 ring-slate-50 relative shadow-lg hover:-translate-y-1 transition-transform cursor-pointer", 
+src/pages/project-details/ProjectDiscussions.tsx-                     idx % 2 === 0 ? "bg-slate-900" : "bg-blue-600",
+--
+src/pages/project-details/ProjectDiscussions.tsx:            {discussions.map((chat, idx) => (
+src/pages/project-details/ProjectDiscussions.tsx-               <motion.div 
+src/pages/project-details/ProjectDiscussions.tsx-                initial={{ opacity: 0, x: -20 }}
+src/pages/project-details/ProjectDiscussions.tsx-                animate={{ opacity: 1, x: 0 }}
+--
+src/pages/project-details/ProjectPlanning.tsx:                {Array.from({ length: 14 }).map((_, i) => (
+src/pages/project-details/ProjectPlanning.tsx-                  <div key={i} className="flex-1 border-r border-slate-100 p-6 text-center group hover:bg-white hover:text-blue-600 transition-all cursor-pointer">
+src/pages/project-details/ProjectPlanning.tsx-                     S{i + 1}
+src/pages/project-details/ProjectPlanning.tsx-                     <div className="text-[8px] font-bold text-slate-300 group-hover:text-blue-400 transition-colors">OCTOBRE 2024</div>
+--
+src/pages/project-details/ProjectPlanning.tsx:              {itemsToDisplay.map((item, idx) => (
+src/pages/project-details/ProjectPlanning.tsx-                <div key={item.id} className="flex h-16 group hover:bg-blue-50/10 transition-all">
+src/pages/project-details/ProjectPlanning.tsx-                  <div className="w-[340px] border-r border-slate-100 px-8 py-4 shrink-0 flex items-center gap-4 relative overflow-hidden">
+src/pages/project-details/ProjectPlanning.tsx-                     <span className="text-[10px] font-mono font-bold text-slate-300">{(idx + 1).toString().padStart(2, '0')}</span>
+--
+src/pages/SettingsPage.tsx:           {segments.map(seg => (
+src/pages/SettingsPage.tsx-             <button
+src/pages/SettingsPage.tsx-              key={seg.id}
+src/pages/SettingsPage.tsx-              onClick={() => setActiveSegment(seg.id)}
+--
+src/pages/ResourcesPage.tsx:               {filteredEmployees.map((emp, idx) => (
+src/pages/ResourcesPage.tsx-                  <tr 
+src/pages/ResourcesPage.tsx-                   key={`${emp.uid}-${idx}`} 
+src/pages/ResourcesPage.tsx-                  onClick={() => handleSelectUser(emp)}
+--
+src/pages/ResourcesPage.tsx:                    {allProjects.map((p, idx) => (
+src/pages/ResourcesPage.tsx-                      <option key={`${p.id}-${idx}`} value={p.id}>
+src/pages/ResourcesPage.tsx-                        {p.name} ({p.id})
+src/pages/ResourcesPage.tsx-                      </option>
+--
+src/pages/ResourcesPage.tsx:                  {userProjects.map((proj, idx) => (
+src/pages/ResourcesPage.tsx-                    <div key={`${proj.id}-${idx}`} className="p-4 bg-white border border-slate-200 rounded-2xl flex justify-between items-center text-xs">
+src/pages/ResourcesPage.tsx-                      <div>
+src/pages/ResourcesPage.tsx-                        <p className="font-extrabold text-slate-900 uppercase font-display">{proj.name}</p>
+--
+src/pages/ResourcesPage.tsx:                  {userLogs.map((log, idx) => (
+src/pages/ResourcesPage.tsx-                    <div key={`${log.id}-${idx}`} className="p-3.5 bg-slate-50 border border-slate-200/50 rounded-2xl text-xs space-y-1 transition-all hover:bg-blue-50/20">
+src/pages/ResourcesPage.tsx-                      <div className="flex justify-between items-center gap-3">
+src/pages/ResourcesPage.tsx-                        <span className="px-1.5 py-0.5 text-[8px] font-black rounded uppercase tracking-wider bg-slate-200 text-slate-700">
+--
+src/pages/NotificationsPage.tsx:      const updated = notifs.map(n => n.id === id ? { ...n, read: true } : n);
+src/pages/NotificationsPage.tsx-      localStorage.setItem('ecotransfo_notifications', JSON.stringify(updated));
+src/pages/NotificationsPage.tsx-      setNotifications(updated);
+src/pages/NotificationsPage.tsx-    } catch (error) {
+--
+src/pages/NotificationsPage.tsx:      const notifs = StorageService.getNotifications().map(n => ({ ...n, read: true }));
+src/pages/NotificationsPage.tsx-      localStorage.setItem('ecotransfo_notifications', JSON.stringify(notifs));
+src/pages/NotificationsPage.tsx-      setNotifications(notifs);
+src/pages/NotificationsPage.tsx-    } catch (error) {
+--
+src/pages/NotificationsPage.tsx:          {notifications.map((n, idx) => (
+src/pages/NotificationsPage.tsx-            <motion.div 
+src/pages/NotificationsPage.tsx-              layout
+src/pages/NotificationsPage.tsx-              key={n.id} 
+--
+src/pages/ClientsPage.tsx:            {clients.map((c) => {
+src/pages/ClientsPage.tsx-              const clientProjects = allProjects.filter(p => p.clientId === c.id || p.client.toLowerCase().includes(c.name.toLowerCase()));
+src/pages/ClientsPage.tsx-              const clientTurnover = clientProjects.reduce((acc, p) => acc + p.budget, 0);
+src/pages/ClientsPage.tsx-              const isActiveLocal = selectedClient?.id === c.id;
+--
+src/pages/ClientsPage.tsx:                        {clientLogins.map((lg) => (
+src/pages/ClientsPage.tsx-                          <div key={lg.uid} className="p-4 bg-slate-50 hover:bg-slate-100/50 transition-colors border border-slate-100 rounded-2xl">
+src/pages/ClientsPage.tsx-                            <div className="flex items-start justify-between gap-3">
+src/pages/ClientsPage.tsx-                              <div className="space-y-1">
+--
+src/pages/ClientsPage.tsx:                {['PLANNING', 'ACTIVE', 'COMPLETED'].map((status) => {
+src/pages/ClientsPage.tsx-                  const items = allProjects.filter(p => 
+src/pages/ClientsPage.tsx-                    (p.clientId === selectedClient.id || p.client.toLowerCase().includes(selectedClient.name.toLowerCase())) &&
+src/pages/ClientsPage.tsx-                    p.status === status
+--
+src/pages/ClientsPage.tsx:                    {allProjects.filter(p => p.clientId === selectedClient.id || p.client.toLowerCase().includes(selectedClient.name.toLowerCase())).map((proj) => (
+src/pages/ClientsPage.tsx-                      <div key={proj.id} className="p-4 bg-slate-50 border border-slate-100 rounded-2xl flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+src/pages/ClientsPage.tsx-                        <div className="space-y-1">
+src/pages/ClientsPage.tsx-                          <p className="text-xs font-extrabold text-slate-900 uppercase tracking-tight font-display">{proj.name}</p>
+--
+src/pages/ClientsPage.tsx:                    {acomptes.filter(a => a.clientId === selectedClient.id).map((ac) => (
+src/pages/ClientsPage.tsx-                      <div key={ac.id} className="flex justify-between items-center text-xs p-4 bg-slate-50 border border-slate-100 rounded-2xl">
+src/pages/ClientsPage.tsx-                        <div className="space-y-1">
+src/pages/ClientsPage.tsx-                          <p className="font-extrabold text-slate-800 uppercase font-display leading-tight">{ac.projectName}</p>
+--
+src/pages/ClientsPage.tsx:                  {allProjects.filter(p => p.clientId === selectedClient.id || p.client.toLowerCase().includes(selectedClient.name.toLowerCase())).map((p) => (
+src/pages/ClientsPage.tsx-                    <option key={p.id} value={p.id}>
+src/pages/ClientsPage.tsx-                      {p.name} ({p.id})
+src/pages/ClientsPage.tsx-                    </option>
+--
+src/pages/GlobalGantt.tsx:           minTime = Math.min(minTime, ...projectTasks.map(t => new Date(t.startDate).getTime()));
+src/pages/GlobalGantt.tsx:           maxTime = Math.max(maxTime, ...projectTasks.map(t => new Date(t.endDate).getTime()));
+src/pages/GlobalGantt.tsx-        }
+src/pages/GlobalGantt.tsx-
+src/pages/GlobalGantt.tsx-        const dMin = new Date(minTime);
+--
+src/pages/GlobalGantt.tsx:           year = new Date(Math.min(...filteredProjects.map(p => new Date(p.startDate).getTime()))).getFullYear();
+src/pages/GlobalGantt.tsx-        }
+src/pages/GlobalGantt.tsx-
+src/pages/GlobalGantt.tsx-        const dMin = new Date(`${year}-01-01`);
+--
+src/pages/GlobalGantt.tsx:                 filteredProjects.map((p, i) => (
+src/pages/GlobalGantt.tsx-                   <div key={p.id} className="contents">
+src/pages/GlobalGantt.tsx-                      <div 
+src/pages/GlobalGantt.tsx-                         className={cn("flex h-12 items-center border-b border-slate-100 cursor-pointer transition-colors duration-200", hoveredId === p.id ? "bg-blue-50/80" : "hover:bg-blue-50", hoveredId && hoveredId !== p.id ? "opacity-30" : "opacity-100")} 
+--
+src/pages/GlobalGantt.tsx:                 projectLots.map((lot, idx) => {
+src/pages/GlobalGantt.tsx-                    const lColor = GROUP_COLORS[idx % GROUP_COLORS.length];
+src/pages/GlobalGantt.tsx-                    const lTasks = projectTasks.filter(t => t.lotId === lot.id);
+src/pages/GlobalGantt.tsx-                    return (
+--
+src/pages/GlobalGantt.tsx:                         {lTasks.map(task => {
+src/pages/GlobalGantt.tsx-                           const userName = users.find(u => u.uid === task.assigneeId)?.displayName || 'Production Team';
+src/pages/GlobalGantt.tsx-                           return (
+src/pages/GlobalGantt.tsx-                             <div 
+--
+src/pages/GlobalGantt.tsx:                    {quarters.map((q, idx) => (
+src/pages/GlobalGantt.tsx-                       <div key={idx} className="border-r border-slate-200 text-center flex items-center justify-center h-full" style={{ width: `${q.days * DAY_WIDTH}px` }}>
+src/pages/GlobalGantt.tsx-                          <span className="text-[10px] font-black uppercase tracking-widest font-display text-slate-600">{q.name}</span>
+src/pages/GlobalGantt.tsx-                       </div>
+--
+src/pages/GlobalGantt.tsx:                     {timelineWeeks.map((week, idx) => (
+src/pages/GlobalGantt.tsx-                       <div key={idx} className="border-r border-slate-100 text-center flex flex-col justify-center h-full" style={{ width: `${WEEK_WIDTH}px` }}>
+src/pages/GlobalGantt.tsx-                          <span className="text-[9px] font-black uppercase tracking-widest font-display text-slate-700">Semaine {week.weekNumber}</span>
+src/pages/GlobalGantt.tsx-                          <span className="text-[8px] font-mono font-medium text-slate-400 mt-0.5">{week.startStr} - {week.endStr}</span>
+--
+src/pages/GlobalGantt.tsx:                     {timelineWeeks.map((week, idx) => {
+src/pages/GlobalGantt.tsx:                       return week.days.map((d, di) => (
+src/pages/GlobalGantt.tsx-                         <div 
+src/pages/GlobalGantt.tsx-                           key={`${idx}-${di}`} 
+src/pages/GlobalGantt.tsx-                           className={cn(
+--
+src/pages/GlobalGantt.tsx:                     {timelineWeeks.map((week, idx) => {
+src/pages/GlobalGantt.tsx-                       if (week.hasHoliday) {
+src/pages/GlobalGantt.tsx-                         return (
+src/pages/GlobalGantt.tsx-                            <div key={`h-${idx}`} className="absolute top-0 bottom-0 flex items-center justify-center pt-0.5" 
+--
+src/pages/GlobalGantt.tsx:                   {timelineWeeks.map((week, idx) => (
+src/pages/GlobalGantt.tsx:                     week.days.map((d, di) => (
+src/pages/GlobalGantt.tsx-                       <div 
+src/pages/GlobalGantt.tsx-                         key={`bg-${idx}-${di}`} 
+src/pages/GlobalGantt.tsx-                         className={cn(
+--
+src/pages/GlobalGantt.tsx:                    filteredProjects.map((p, i) => {
+src/pages/GlobalGantt.tsx-                      const projStart = new Date(p.startDate);
+src/pages/GlobalGantt.tsx-                      const projEnd = new Date(p.endDate);
+src/pages/GlobalGantt.tsx-                      const startDiff = (projStart.getTime() - minDate.getTime()) / (1000 * 60 * 60 * 24);
+--
+src/pages/GlobalGantt.tsx:                    projectLots.map((lot, idx) => {
+src/pages/GlobalGantt.tsx-                      const lColor = GROUP_COLORS[idx % GROUP_COLORS.length];
+src/pages/GlobalGantt.tsx-                      const lotStart = new Date(lot.startDate);
+src/pages/GlobalGantt.tsx-                      const lotEnd = new Date(lot.endDate);
+--
+src/pages/GlobalGantt.tsx:                           {lTasks.map(task => {
+src/pages/GlobalGantt.tsx-                             const tStart = new Date(task.startDate);
+src/pages/GlobalGantt.tsx-                             const tEnd = new Date(task.endDate);
+src/pages/GlobalGantt.tsx-                             const tStartDiff = (tStart.getTime() - minDate.getTime()) / (1000 * 60 * 60 * 24);
+--
+src/pages/ProjectList.tsx:                  {filteredProjects.map((project) => (
+src/pages/ProjectList.tsx-                    <tr 
+src/pages/ProjectList.tsx-                      key={project.id} 
+src/pages/ProjectList.tsx-                      className="hover:bg-blue-50/30 transition-all cursor-pointer group"
+--
+src/pages/ProjectList.tsx:            {filteredProjects.map((project) => (
+src/pages/ProjectList.tsx-              <motion.div 
+src/pages/ProjectList.tsx-                key={project.id}
+src/pages/ProjectList.tsx-                whileHover={{ y: -8 }}
+--
+src/pages/ProjectList.tsx:            {clients.map(c => (
+src/pages/ProjectList.tsx-              <option key={c.id} value={c.id}>
+src/pages/ProjectList.tsx-                {c.name} ({c.industry || 'Industrie'})
+src/pages/ProjectList.tsx-              </option>
+--
+src/pages/BudgetPage.tsx:  const data = projects.map(p => ({
+src/pages/BudgetPage.tsx-     name: p.name.split(' ').slice(0, 2).join(' '),
+src/pages/BudgetPage.tsx-     budget: p.budget,
+src/pages/BudgetPage.tsx-     spent: p.spent
+--
+src/pages/BudgetPage.tsx:                          {pieData.map((entry, index) => <Cell key={index} fill={entry.color} className="drop-shadow-2xl" />)}
+src/pages/BudgetPage.tsx-                       </Pie>
+src/pages/BudgetPage.tsx-                       <Tooltip 
+src/pages/BudgetPage.tsx-                         contentStyle={{backgroundColor: '#1e293b', border: 'none', borderRadius: '16px', color: '#fff', fontSize: '11px', fontWeight: 'bold'}}
+--
+src/pages/ProfilePage.tsx:                   {['Project Management', 'Construction HT', 'Budgeting', 'Risk Analysis', 'Primavera P6', 'Eco-Design'].map(skill => (
+src/pages/ProfilePage.tsx-                     <span key={skill} className="px-4 py-2 bg-slate-50 text-slate-600 text-[10px] font-black uppercase tracking-widest rounded-xl border border-slate-100 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-100 transition-all cursor-default shadow-sm font-display">{skill}</span>
+src/pages/ProfilePage.tsx-                   ))}
+src/pages/ProfilePage.tsx-                </div>
+--
+src/pages/Dashboard.tsx:  const busyUsers = new Set(tasks.filter(t => t.status !== 'DONE').map(t => t.assigneeId));
+src/pages/Dashboard.tsx-  const teamUtilization = teamMembers.length > 0 ? Math.round((busyUsers.size / teamMembers.length) * 100) : 0;
+src/pages/Dashboard.tsx-
+src/pages/Dashboard.tsx-  const stats = [
+--
+src/pages/Dashboard.tsx:        {stats.map((stat, idx) => (
+src/pages/Dashboard.tsx-          <motion.div 
+src/pages/Dashboard.tsx-            initial={{ opacity: 0, y: 20 }}
+src/pages/Dashboard.tsx-            animate={{ opacity: 1, y: 0 }}
+--
+src/pages/Dashboard.tsx:                     {projects.length > 0 ? projects.slice(0, 5).map((p, i) => (
+src/pages/Dashboard.tsx-                        <tr 
+src/pages/Dashboard.tsx-                          key={`${p.id}-${i}`} 
+src/pages/Dashboard.tsx-                          onClick={() => navigate(`/projects/${p.id}`)}
+--
+src/pages/Dashboard.tsx:                   {teamMembers.length > 0 ? teamMembers.map((member, i) => (
+src/pages/Dashboard.tsx-                     <div key={`${member.uid}-${i}`} className="space-y-2">
+src/pages/Dashboard.tsx-                        <div className="flex justify-between items-end">
+src/pages/Dashboard.tsx-                           <div className="flex items-center gap-3">
+--
+src/pages/Dashboard.tsx:                 {tasks.length > 0 ? tasks.slice(0, 6).map((task, i) => (
+src/pages/Dashboard.tsx-                   <div key={`${task.id}-${i}`} className="flex gap-4 group">
+src/pages/Dashboard.tsx-                      <div className="flex flex-col items-center">
+src/pages/Dashboard.tsx-                         <div className={cn(
+--
+src/pages/ProjectDetail.tsx:                  {TABS.map((tab) => {
+src/pages/ProjectDetail.tsx-                     const isActive = activeTab === tab.id;
+src/pages/ProjectDetail.tsx-                     return (
+src/pages/ProjectDetail.tsx-                        <button
+--
+src/pages/TasksPage.tsx:      const authProjIds = new Set(authorizedProjects.map(p => p.id));
+src/pages/TasksPage.tsx-      const authorizedTasks = data.filter(t => authProjIds.has(t.projectId));
+src/pages/TasksPage.tsx-      
+src/pages/TasksPage.tsx-      setTasks(authorizedTasks);
+--
+src/pages/TasksPage.tsx:    const updatedTasks = tasks.map(t => 
+src/pages/TasksPage.tsx-      t.id === draggableId ? { ...t, status: newStatus } : t
+src/pages/TasksPage.tsx-    );
+src/pages/TasksPage.tsx-    setTasks(updatedTasks);
+--
+src/pages/TasksPage.tsx:              {projects.map(p => (
+src/pages/TasksPage.tsx-                <option key={p.id} value={p.id}>{p.name}</option>
+src/pages/TasksPage.tsx-              ))}
+src/pages/TasksPage.tsx-            </select>
+--
+src/pages/TasksPage.tsx:                   {filteredTasks.map(task => (
+src/pages/TasksPage.tsx-                     <tr key={task.id} className="hover:bg-slate-50/50 transition-all group">
+src/pages/TasksPage.tsx-                       <td className="px-8 py-6 text-center">
+src/pages/TasksPage.tsx-                          <div className="px-3 py-1 bg-slate-100 rounded-lg text-[10px] font-mono font-bold text-slate-500 uppercase italic">#{task.id?.slice(0, 5)}</div>
+--
+src/pages/TasksPage.tsx:              {columns.map(col => (
+src/pages/TasksPage.tsx-                <div key={col.id} className="w-[300px] lg:w-full min-h-[700px] flex flex-col space-y-6">
+src/pages/TasksPage.tsx-                  <div className="p-6 bg-white border border-slate-100 rounded-[32px] flex items-center justify-between shadow-sm group hover:border-blue-500 transition-all duration-500">
+src/pages/TasksPage.tsx-                     <div className="flex items-center gap-4">
+--
+src/pages/TasksPage.tsx:                         {filteredTasks.filter(t => t.status === col.id).map((task, index) => (
+src/pages/TasksPage.tsx-                           /* @ts-ignore - Library types mismatch with React key prop */
+src/pages/TasksPage.tsx-                           <Draggable key={task.id} draggableId={task.id} index={index}>
+src/pages/TasksPage.tsx-                             {(provided, snapshot) => (
+--
+src/pages/ReportsPage.tsx:        const authProjIds = new Set(authorizedProjects.map(p => p.id));
+src/pages/ReportsPage.tsx-        const authorizedTasks = tData.filter(t => authProjIds.has(t.projectId));
+src/pages/ReportsPage.tsx-
+src/pages/ReportsPage.tsx-        setProjects(authorizedProjects);
+--
+src/pages/ReportsPage.tsx:  const budgetProgressData = projects.map(p => ({
+src/pages/ReportsPage.tsx-    name: p.name,
+src/pages/ReportsPage.tsx-    Budget: p.budget,
+src/pages/ReportsPage.tsx-    Dépensé: p.spent
+--
+src/pages/ReportsPage.tsx:                      {statusData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
+src/pages/ReportsPage.tsx-                    </Pie>
+src/pages/ReportsPage.tsx-                    <Tooltip contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }} />
+src/pages/ReportsPage.tsx-                  </PieChart>
+--
+src/pages/ReportsPage.tsx:                      {taskDistributionData.map((entry, index) => <Cell key={`cell-task-${index}`} fill={entry.color} />)}
+src/pages/ReportsPage.tsx-                    </Pie>
+src/pages/ReportsPage.tsx-                    <Tooltip contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }} />
+src/pages/ReportsPage.tsx-                  </PieChart>
+--
+src/pages/ReportsPage.tsx:            {projects.slice(0, 4).map((p, idx) => {
+src/pages/ReportsPage.tsx-              const variance = (p.budget || 0) - (p.spent || 0);
+src/pages/ReportsPage.tsx-              const isOverBudget = variance < 0;
+src/pages/ReportsPage.tsx-              return (
+--
+src/lib/firebase-sync.ts:      const data = snapshot.docs.map(doc => doc.data());
+src/lib/firebase-sync.ts-      
+src/lib/firebase-sync.ts-      if (data.length > 0) {
+src/lib/firebase-sync.ts-        localStorage.setItem(STORAGE_KEYS[key as keyof typeof STORAGE_KEYS], JSON.stringify(data));
+--
+src/components/Layout.tsx:          {menuItems.map((item) => {
+src/components/Layout.tsx-            const isActive = location.pathname === item.path || (item.path !== '/' && location.pathname.startsWith(item.path));
+src/components/Layout.tsx-            return (
+src/components/Layout.tsx-              <Link
+--
+src/components/Layout.tsx:                {menuItems.map((item) => {
+src/components/Layout.tsx-                  const isActive = location.pathname === item.path || (item.path !== '/' && location.pathname.startsWith(item.path));
+src/components/Layout.tsx-                  return (
+src/components/Layout.tsx-                    <Link
+--
+src/components/TaskModal.tsx:                        {formData.dependencies.map(depId => {
+src/components/TaskModal.tsx-                          const depTask = availableTasks.find(t => t.id === depId);
+src/components/TaskModal.tsx-                          return (
+src/components/TaskModal.tsx-                            <div key={depId} className="flex items-center gap-2 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-lg text-[10px] font-bold text-blue-600 uppercase">
+--
+src/components/TaskModal.tsx:                          {availableTasks.filter(t => !formData.dependencies.includes(t.id)).map(t => (
+src/components/TaskModal.tsx-                            <option key={t.id} value={t.id}>{t.name}</option>
+src/components/TaskModal.tsx-                          ))}
+src/components/TaskModal.tsx-                        </select>
+--
+src/components/TaskModal.tsx:                      formData.comments.sort((a,b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()).map(comment => (
+src/components/TaskModal.tsx-                        <div key={comment.id} className="flex gap-4 group">
+src/components/TaskModal.tsx-                          <div className="w-10 h-10 rounded-2xl bg-slate-100 flex items-center justify-center shrink-0 uppercase font-black text-[10px] text-slate-400">
+src/components/TaskModal.tsx-                            {comment.userName.charAt(0)}
+--
+src/components/TaskModal.tsx:                      formData.attachments.map((file, idx) => (
+src/components/TaskModal.tsx-                        <div key={idx} className="p-4 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-between group">
+src/components/TaskModal.tsx-                          <div className="flex items-center gap-3">
+src/components/TaskModal.tsx-                            <div className="w-8 h-8 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-400">
+--
+src/components/ClientPortal.tsx:                  {projects.map((proj) => (
+src/components/ClientPortal.tsx-                    <div 
+src/components/ClientPortal.tsx-                      key={proj.id} 
+src/components/ClientPortal.tsx-                      onClick={() => handleSelectProject(proj)}
+--
+src/components/ClientPortal.tsx:                      {clientAcomptes.map((ac) => (
+src/components/ClientPortal.tsx-                        <div key={ac.id} className="flex justify-between items-center text-xs p-3.5 bg-white border border-slate-200 rounded-2xl shadow-sm">
+src/components/ClientPortal.tsx-                          <div className="space-y-1">
+src/components/ClientPortal.tsx-                            <p className="font-extrabold text-slate-800 font-display uppercase tracking-tight truncate max-w-[150px]">{ac.projectName}</p>
+--
+src/components/ClientPortal.tsx:                    {projectLots.map((lot) => (
+src/components/ClientPortal.tsx-                      <div key={lot.id} className="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex justify-between items-center flex-wrap gap-4">
+src/components/ClientPortal.tsx-                        <div className="space-y-1">
+src/components/ClientPortal.tsx-                          <p className="text-sm font-extrabold text-slate-800 uppercase tracking-tight font-display">{lot.name}</p>
+--
+src/components/ClientPortal.tsx:                        {projectTasks.map((t) => (
+src/components/ClientPortal.tsx-                          <tr key={t.id} className="hover:bg-slate-50/50 transition-colors">
+src/components/ClientPortal.tsx-                            <td className="py-3 pr-4">
+src/components/ClientPortal.tsx-                              <p className="font-extrabold text-slate-900 uppercase font-display">{t.name}</p>
+--
+src/components/ClientPortal.tsx:                      {feedbackList.map((fb) => (
+src/components/ClientPortal.tsx-                        <div key={fb.id} className="p-4 rounded-2xl border border-slate-200 bg-white shadow-sm space-y-3 relative group">
+src/components/ClientPortal.tsx-                          <div className="flex justify-between items-start gap-3">
+src/components/ClientPortal.tsx-                            <div>
+--
+src/components/ClientPortal.tsx:                              {fb.replies.map((rep) => (
+src/components/ClientPortal.tsx-                                <div key={rep.id} className="p-3 bg-blue-50/30 border border-blue-100/30 rounded-xl space-y-1 ml-2">
+src/components/ClientPortal.tsx-                                  <div className="flex justify-between items-center text-[8px] font-black uppercase text-blue-900">
+src/components/ClientPortal.tsx-                                    <span>{rep.userName} ({rep.userRole})</span>
+--
+src/components/LotModal.tsx:    const usersArray = formData.assignedUsers.split(',').map(u => u.trim()).filter(Boolean);
+src/components/LotModal.tsx-
+src/components/LotModal.tsx-    try {
+src/components/LotModal.tsx-      StorageService.saveLot({
